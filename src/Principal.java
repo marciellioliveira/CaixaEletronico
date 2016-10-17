@@ -20,13 +20,6 @@ public class Principal extends javax.swing.JFrame {
         this.valorAtualCaixa = 60;
         
         initComponents();
-        
-        jButtonN10.setVisible(false);
-        jButtonN20.setVisible(false);
-        jButtonN50.setVisible(false);
-        jButtonN100.setVisible(false);
-        
-        
         setResizable(false);
         
        jTextFieldValorInicial.setText(""+converterValorInicial());
@@ -34,6 +27,8 @@ public class Principal extends javax.swing.JFrame {
 
        
     }
+    
+   
     
     public void setValorInicial(int valorInicialCaixa) {
         valorInicialCaixa = this.valorInicialCaixa;       
@@ -96,10 +91,6 @@ public class Principal extends javax.swing.JFrame {
         jButtonAleatorio = new javax.swing.JButton();
         jButtonpeguedinheiro = new javax.swing.JButton();
         jButtonSaqueIndisponivel = new javax.swing.JButton();
-        jButtonN10 = new javax.swing.JButton();
-        jButtonN20 = new javax.swing.JButton();
-        jButtonN50 = new javax.swing.JButton();
-        jButtonN100 = new javax.swing.JButton();
         jLabelValorInicial = new javax.swing.JLabel();
         jTextFieldValorInicial = new javax.swing.JTextField();
         jPanelTopo = new javax.swing.JPanel();
@@ -203,46 +194,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jButtonN10.setBackground(new java.awt.Color(102, 102, 255));
-        jButtonN10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButtonN10.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonN10.setText("10");
-        jButtonN10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonN10ActionPerformed(evt);
-            }
-        });
-
-        jButtonN20.setBackground(new java.awt.Color(102, 102, 255));
-        jButtonN20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButtonN20.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonN20.setText("20");
-        jButtonN20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonN20ActionPerformed(evt);
-            }
-        });
-
-        jButtonN50.setBackground(new java.awt.Color(102, 102, 255));
-        jButtonN50.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButtonN50.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonN50.setText("50");
-        jButtonN50.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonN50ActionPerformed(evt);
-            }
-        });
-
-        jButtonN100.setBackground(new java.awt.Color(102, 102, 255));
-        jButtonN100.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButtonN100.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonN100.setText("100");
-        jButtonN100.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonN100ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanelRodapeLayout = new javax.swing.GroupLayout(jPanelRodape);
         jPanelRodape.setLayout(jPanelRodapeLayout);
         jPanelRodapeLayout.setHorizontalGroup(
@@ -277,16 +228,8 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanelRodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButtonpeguedinheiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonSaqueIndisponivel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanelRodapeLayout.createSequentialGroup()
-                                .addComponent(jButtonN10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36)
-                                .addComponent(jButtonN20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                                .addComponent(jButtonN50, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(jButtonN100)))
+                            .addComponent(jButtonpeguedinheiro, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
+                            .addComponent(jButtonSaqueIndisponivel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(12, 12, 12)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRodapeLayout.createSequentialGroup()
@@ -303,12 +246,10 @@ public class Principal extends javax.swing.JFrame {
 
         jPanelRodapeLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextFieldQuantidadeNota100Disponivel, jTextFieldQuantidadeNota10Disponivel, jTextFieldQuantidadeNota20Disponivel, jTextFieldQuantidadeNota50Disponivel});
 
-        jPanelRodapeLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButtonN10, jButtonN100, jButtonN20, jButtonN50});
-
         jPanelRodapeLayout.setVerticalGroup(
             jPanelRodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRodapeLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRodapeLayout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
                 .addGroup(jPanelRodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelRodapeLayout.createSequentialGroup()
                         .addComponent(jButtonAleatorio)
@@ -318,26 +259,14 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jButtonRetiradaUsuario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextFieldQuantidadeUsuarioRetira, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelNotasDisponiveis)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanelRodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelRodapeLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelRodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanelRodapeLayout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(jButtonpeguedinheiro)
-                                .addGap(40, 40, 40)
-                                .addComponent(jButtonSaqueIndisponivel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanelRodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButtonN10)
-                                    .addComponent(jButtonN20)
-                                    .addComponent(jButtonN50)
-                                    .addComponent(jButtonN100)))))
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelRodapeLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(jPanelRodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -354,8 +283,13 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanelRodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextFieldQuantidadeNota100Disponivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelNota100))))
-                .addContainerGap())
+                            .addComponent(jLabelNota100)))
+                    .addGroup(jPanelRodapeLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jButtonpeguedinheiro)
+                        .addGap(40, 40, 40)
+                        .addComponent(jButtonSaqueIndisponivel)))
+                .addGap(44, 44, 44))
         );
 
         jPanelRodapeLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jTextFieldQuantidadeNota100Disponivel, jTextFieldQuantidadeNota10Disponivel, jTextFieldQuantidadeNota20Disponivel, jTextFieldQuantidadeNota50Disponivel});
@@ -485,8 +419,9 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jButton2)
                         .addComponent(jButton3)
                         .addComponent(jButton4)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(jPanelRodape, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addComponent(jPanelRodape, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         getContentPane().add(jPanelBgCaixa);
@@ -515,8 +450,9 @@ public class Principal extends javax.swing.JFrame {
             jTextFieldQuantidadeNota50Disponivel.setText(""+count50);
             jTextFieldQuantidadeNota100Disponivel.setText(""+count100);
             
-        }
+        } 
         
+       
         
         
     }//GEN-LAST:event_jButtonRetiradaUsuarioActionPerformed
@@ -545,17 +481,14 @@ public class Principal extends javax.swing.JFrame {
             jTextFieldValorAtual.setDisabledTextColor(Color.BLUE);
             jButtonpeguedinheiro.setForeground(Color.WHITE);
             jButtonpeguedinheiro.setBackground(Color.BLUE);
+            jTextFieldQuantidadeUsuarioRetira.setDisabledTextColor(Color.BLUE);
             
             
         } else {
              jTextFieldValorAtual.setDisabledTextColor(Color.RED);
              jButtonSaqueIndisponivel.setForeground(Color.WHITE);
              jButtonSaqueIndisponivel.setBackground(Color.RED);
-             
-             jButtonN10.setVisible(true);
-             jButtonN20.setVisible(true);
-             jButtonN50.setVisible(true);
-             jButtonN100.setVisible(true);
+             jTextFieldQuantidadeUsuarioRetira.setDisabledTextColor(Color.RED);
              
         }
         
@@ -585,10 +518,6 @@ public class Principal extends javax.swing.JFrame {
              jButtonSaqueIndisponivel.setForeground(Color.WHITE);
              jButtonSaqueIndisponivel.setBackground(Color.RED);
              
-             jButtonN10.setVisible(true);
-             jButtonN20.setVisible(true);
-             jButtonN50.setVisible(true);
-             jButtonN100.setVisible(true);
         }
         
         count20++;
@@ -614,13 +543,10 @@ public class Principal extends javax.swing.JFrame {
              jButtonSaqueIndisponivel.setForeground(Color.WHITE);
              jButtonSaqueIndisponivel.setBackground(Color.RED);
              
-             jButtonN10.setVisible(true);
-             jButtonN20.setVisible(true);
-             jButtonN50.setVisible(true);
-             jButtonN100.setVisible(true);
-        }
         
-        count50++;
+        
+       }
+       count50++;
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -642,12 +568,9 @@ public class Principal extends javax.swing.JFrame {
              jButtonSaqueIndisponivel.setForeground(Color.WHITE);
              jButtonSaqueIndisponivel.setBackground(Color.RED);
              
-             jButtonN10.setVisible(true);
-             jButtonN20.setVisible(true);
-             jButtonN50.setVisible(true);
-             jButtonN100.setVisible(true);
-        }
         
+        
+        }
         count100++;
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -665,127 +588,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonpeguedinheiroActionPerformed
 
     private void jButtonSaqueIndisponivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaqueIndisponivelActionPerformed
+      
+        
         
     }//GEN-LAST:event_jButtonSaqueIndisponivelActionPerformed
-
-    private void jButtonN10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonN10ActionPerformed
-        String n1 = jButton1.getText();
-        n10 = Integer.parseInt(n1);
-        valorAtualCaixa = valorAtualCaixa + n10;
-        jTextFieldValorAtual.setText(""+valorAtualCaixa);
-        
-        qntRetira = qntRetira - n10;
-        jTextFieldQuantidadeUsuarioRetira.setText(""+qntRetira);
-        
-        if(valorAtualCaixa > 0) {
-            jTextFieldValorAtual.setDisabledTextColor(Color.BLUE);
-            jButtonpeguedinheiro.setForeground(Color.WHITE);
-            jButtonpeguedinheiro.setBackground(Color.BLUE);
-            
-            
-        } else {
-             jTextFieldValorAtual.setDisabledTextColor(Color.RED);
-             jButtonSaqueIndisponivel.setForeground(Color.WHITE);
-             jButtonSaqueIndisponivel.setBackground(Color.RED);
-             
-             jButtonN10.setVisible(true);
-             jButtonN20.setVisible(true);
-             jButtonN50.setVisible(true);
-             jButtonN100.setVisible(true);
-             
-        }
-        
-        
-        count10++;
-        
-    }//GEN-LAST:event_jButtonN10ActionPerformed
-
-    private void jButtonN20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonN20ActionPerformed
-        String n2 = jButton2.getText();
-        n20 = Integer.parseInt(n2);
-        valorAtualCaixa = valorAtualCaixa + n20;
-        jTextFieldValorAtual.setText(""+valorAtualCaixa);
-        
-        qntRetira = qntRetira - n20;
-        jTextFieldQuantidadeUsuarioRetira.setText(""+qntRetira);
-        
-      if(valorAtualCaixa > 0) {
-            jTextFieldValorAtual.setDisabledTextColor(Color.BLUE);
-            jButtonpeguedinheiro.setForeground(Color.WHITE);
-            jButtonpeguedinheiro.setBackground(Color.BLUE);
-            
-            
-        } else {
-             jTextFieldValorAtual.setDisabledTextColor(Color.RED);
-             jButtonSaqueIndisponivel.setForeground(Color.WHITE);
-             jButtonSaqueIndisponivel.setBackground(Color.RED);
-             
-             jButtonN10.setVisible(true);
-             jButtonN20.setVisible(true);
-             jButtonN50.setVisible(true);
-             jButtonN100.setVisible(true);
-        }
-        
-        count20++;
-    }//GEN-LAST:event_jButtonN20ActionPerformed
-
-    private void jButtonN50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonN50ActionPerformed
-       String n2 = jButton2.getText();
-        n20 = Integer.parseInt(n2);
-        valorAtualCaixa = valorAtualCaixa + n20;
-        jTextFieldValorAtual.setText(""+valorAtualCaixa);
-        
-        qntRetira = qntRetira - n20;
-        jTextFieldQuantidadeUsuarioRetira.setText(""+qntRetira);
-        
-      if(valorAtualCaixa > 0) {
-            jTextFieldValorAtual.setDisabledTextColor(Color.BLUE);
-            jButtonpeguedinheiro.setForeground(Color.WHITE);
-            jButtonpeguedinheiro.setBackground(Color.BLUE);
-            
-            
-        } else {
-             jTextFieldValorAtual.setDisabledTextColor(Color.RED);
-             jButtonSaqueIndisponivel.setForeground(Color.WHITE);
-             jButtonSaqueIndisponivel.setBackground(Color.RED);
-             
-             jButtonN10.setVisible(true);
-             jButtonN20.setVisible(true);
-             jButtonN50.setVisible(true);
-             jButtonN100.setVisible(true);
-        }
-        
-        count20++;
-    }//GEN-LAST:event_jButtonN50ActionPerformed
-
-    private void jButtonN100ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonN100ActionPerformed
-        String n2 = jButton2.getText();
-        n20 = Integer.parseInt(n2);
-        valorAtualCaixa = valorAtualCaixa + n20;
-        jTextFieldValorAtual.setText(""+valorAtualCaixa);
-        
-        qntRetira = qntRetira - n20;
-        jTextFieldQuantidadeUsuarioRetira.setText(""+qntRetira);
-        
-      if(valorAtualCaixa > 0) {
-            jTextFieldValorAtual.setDisabledTextColor(Color.BLUE);
-            jButtonpeguedinheiro.setForeground(Color.WHITE);
-            jButtonpeguedinheiro.setBackground(Color.BLUE);
-            
-            
-        } else {
-             jTextFieldValorAtual.setDisabledTextColor(Color.RED);
-             jButtonSaqueIndisponivel.setForeground(Color.WHITE);
-             jButtonSaqueIndisponivel.setBackground(Color.RED);
-             
-             jButtonN10.setVisible(true);
-             jButtonN20.setVisible(true);
-             jButtonN50.setVisible(true);
-             jButtonN100.setVisible(true);
-        }
-        
-        count20++;
-    }//GEN-LAST:event_jButtonN100ActionPerformed
 
     
     /**
@@ -831,10 +637,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButtonAleatorio;
-    private javax.swing.JButton jButtonN10;
-    private javax.swing.JButton jButtonN100;
-    private javax.swing.JButton jButtonN20;
-    private javax.swing.JButton jButtonN50;
     private javax.swing.JButton jButtonRetiradaUsuario;
     private javax.swing.JButton jButtonSaqueIndisponivel;
     private javax.swing.JButton jButtonpeguedinheiro;
