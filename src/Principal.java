@@ -13,7 +13,7 @@ public class Principal extends javax.swing.JFrame {
 
     private int valorInicialCaixa, valorAtualCaixa, n10=10, n20=20, n50=50, n100 =100;
     private String valorInicial, valorAtual, n1;
-    private  int count10 = 0, count20=0, count50=0, count100=0, soma, qntRetira=0;
+    private  int count10 = 0, count20=0, count50=0, count100=0, soma, qntRetira=0, caixaInicio=60;
        
     public Principal() {
         
@@ -94,6 +94,7 @@ public class Principal extends javax.swing.JFrame {
         jButtonAleatorio = new javax.swing.JButton();
         jButtonpeguedinheiro = new javax.swing.JButton();
         jButtonSaqueIndisponivel = new javax.swing.JButton();
+        jButtonSaqueIndisponivel1 = new javax.swing.JButton();
         jLabelValorInicial = new javax.swing.JLabel();
         jTextFieldValorInicial = new javax.swing.JTextField();
         jPanelTopo = new javax.swing.JPanel();
@@ -197,6 +198,16 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jButtonSaqueIndisponivel1.setBackground(new java.awt.Color(102, 102, 255));
+        jButtonSaqueIndisponivel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButtonSaqueIndisponivel1.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonSaqueIndisponivel1.setText("Nova Retirada");
+        jButtonSaqueIndisponivel1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSaqueIndisponivel1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelRodapeLayout = new javax.swing.GroupLayout(jPanelRodape);
         jPanelRodape.setLayout(jPanelRodapeLayout);
         jPanelRodapeLayout.setHorizontalGroup(
@@ -232,7 +243,8 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanelRodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButtonpeguedinheiro, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
-                            .addComponent(jButtonSaqueIndisponivel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jButtonSaqueIndisponivel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonSaqueIndisponivel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(12, 12, 12)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRodapeLayout.createSequentialGroup()
@@ -268,9 +280,6 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanelRodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelRodapeLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelRodapeLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(jPanelRodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextFieldQuantidadeNota10Disponivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -288,10 +297,15 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jTextFieldQuantidadeNota100Disponivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelNota100)))
                     .addGroup(jPanelRodapeLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(jButtonpeguedinheiro)
-                        .addGap(40, 40, 40)
-                        .addComponent(jButtonSaqueIndisponivel)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelRodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanelRodapeLayout.createSequentialGroup()
+                                .addComponent(jButtonpeguedinheiro)
+                                .addGap(42, 42, 42)
+                                .addComponent(jButtonSaqueIndisponivel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonSaqueIndisponivel1))
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(44, 44, 44))
         );
 
@@ -493,6 +507,7 @@ public class Principal extends javax.swing.JFrame {
              jButtonSaqueIndisponivel.setBackground(Color.RED);
              jTextFieldQuantidadeUsuarioRetira.setDisabledTextColor(Color.RED);
              
+                     
              int valor = Integer.parseInt(jTextFieldValorAtual.getText());
         
         if(valor <= 0) {
@@ -502,6 +517,10 @@ public class Principal extends javax.swing.JFrame {
             jButton3.setEnabled(false);
             jButton4.setEnabled(false);            
         }
+        
+            jTextFieldValorAtual.setDisabledTextColor(Color.blue);
+            jTextFieldQuantidadeUsuarioRetira.setDisabledTextColor(Color.blue);
+            
              
         }
         count10++;
@@ -528,6 +547,7 @@ public class Principal extends javax.swing.JFrame {
              jTextFieldValorAtual.setDisabledTextColor(Color.RED);
              jButtonSaqueIndisponivel.setForeground(Color.WHITE);
              jButtonSaqueIndisponivel.setBackground(Color.RED);
+             jTextFieldQuantidadeUsuarioRetira.setDisabledTextColor(Color.RED);
              
               int valor = Integer.parseInt(jTextFieldValorAtual.getText());
         
@@ -538,6 +558,9 @@ public class Principal extends javax.swing.JFrame {
             jButton3.setEnabled(false);
             jButton4.setEnabled(false);
         }
+        
+        jTextFieldValorAtual.setDisabledTextColor(Color.blue);
+            jTextFieldQuantidadeUsuarioRetira.setDisabledTextColor(Color.blue);
              
         }
       
@@ -565,6 +588,7 @@ public class Principal extends javax.swing.JFrame {
              jTextFieldValorAtual.setDisabledTextColor(Color.RED);
              jButtonSaqueIndisponivel.setForeground(Color.WHITE);
              jButtonSaqueIndisponivel.setBackground(Color.RED);   
+             jTextFieldQuantidadeUsuarioRetira.setDisabledTextColor(Color.RED);
              
               int valor = Integer.parseInt(jTextFieldValorAtual.getText());
         
@@ -575,6 +599,9 @@ public class Principal extends javax.swing.JFrame {
             jButton3.setEnabled(false);
             jButton4.setEnabled(false);
         }
+        
+        jTextFieldValorAtual.setDisabledTextColor(Color.blue);
+            jTextFieldQuantidadeUsuarioRetira.setDisabledTextColor(Color.blue);
        }
        
       
@@ -600,6 +627,7 @@ public class Principal extends javax.swing.JFrame {
              jTextFieldValorAtual.setDisabledTextColor(Color.RED);
              jButtonSaqueIndisponivel.setForeground(Color.WHITE);
              jButtonSaqueIndisponivel.setBackground(Color.RED);
+             jTextFieldQuantidadeUsuarioRetira.setDisabledTextColor(Color.RED);
              
               int valor = Integer.parseInt(jTextFieldValorAtual.getText());
         
@@ -610,6 +638,10 @@ public class Principal extends javax.swing.JFrame {
             jButton3.setEnabled(false);
             jButton4.setEnabled(false);
         }
+        
+          jTextFieldValorAtual.setDisabledTextColor(Color.blue);
+            jTextFieldQuantidadeUsuarioRetira.setDisabledTextColor(Color.blue);
+        
         
         }
         
@@ -648,9 +680,24 @@ public class Principal extends javax.swing.JFrame {
       jTextFieldQuantidadeUsuarioRetira.setText(""+sub);
       jTextFieldValorAtual.setText(""+sub);
       
+      jTextFieldValorAtual.setDisabledTextColor(Color.blue);
+      jTextFieldQuantidadeUsuarioRetira.setDisabledTextColor(Color.BLUE);
+      
         
         
     }//GEN-LAST:event_jButtonSaqueIndisponivelActionPerformed
+
+    private void jButtonSaqueIndisponivel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaqueIndisponivel1ActionPerformed
+
+            jTextFieldValorInicial.setText(""+caixaInicio);
+            jTextFieldValorAtual.setText(""+caixaInicio);
+            
+        
+            jButton1.setEnabled(true);
+            jButton2.setEnabled(true);
+            jButton3.setEnabled(true);
+            jButton4.setEnabled(true);
+    }//GEN-LAST:event_jButtonSaqueIndisponivel1ActionPerformed
 
     
     /**
@@ -698,6 +745,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAleatorio;
     private javax.swing.JButton jButtonRetiradaUsuario;
     private javax.swing.JButton jButtonSaqueIndisponivel;
+    private javax.swing.JButton jButtonSaqueIndisponivel1;
     private javax.swing.JButton jButtonpeguedinheiro;
     private javax.swing.JLabel jLabelNota10;
     private javax.swing.JLabel jLabelNota100;
