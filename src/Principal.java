@@ -2,6 +2,7 @@
 import java.awt.Color;
 import java.util.Random;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -24,6 +25,8 @@ public class Principal extends javax.swing.JFrame {
         
        jTextFieldValorInicial.setText(""+converterValorInicial());
        jTextFieldValorAtual.setText(""+converterValorAtual());
+       
+      
 
        
     }
@@ -431,7 +434,7 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldValorAtualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorAtualActionPerformed
-    
+        
     }//GEN-LAST:event_jTextFieldValorAtualActionPerformed
 
     private void jButtonRetiradaUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRetiradaUsuarioActionPerformed
@@ -490,9 +493,17 @@ public class Principal extends javax.swing.JFrame {
              jButtonSaqueIndisponivel.setBackground(Color.RED);
              jTextFieldQuantidadeUsuarioRetira.setDisabledTextColor(Color.RED);
              
+             int valor = Integer.parseInt(jTextFieldValorAtual.getText());
+        
+        if(valor <= 0) {
+            JOptionPane.showMessageDialog(null, "Por favor, retire seu dinheiro!");          
+            jButton1.setEnabled(false);
+            jButton2.setEnabled(false);
+            jButton3.setEnabled(false);
+            jButton4.setEnabled(false);            
         }
-        
-        
+             
+        }
         count10++;
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -518,7 +529,19 @@ public class Principal extends javax.swing.JFrame {
              jButtonSaqueIndisponivel.setForeground(Color.WHITE);
              jButtonSaqueIndisponivel.setBackground(Color.RED);
              
+              int valor = Integer.parseInt(jTextFieldValorAtual.getText());
+        
+        if(valor <= 0) {
+            JOptionPane.showMessageDialog(null, "Por favor, retire seu dinheiro!");          
+            jButton1.setEnabled(false);
+            jButton2.setEnabled(false);
+            jButton3.setEnabled(false);
+            jButton4.setEnabled(false);
         }
+             
+        }
+      
+     
         
         count20++;
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -541,11 +564,21 @@ public class Principal extends javax.swing.JFrame {
         } else {
              jTextFieldValorAtual.setDisabledTextColor(Color.RED);
              jButtonSaqueIndisponivel.setForeground(Color.WHITE);
-             jButtonSaqueIndisponivel.setBackground(Color.RED);
+             jButtonSaqueIndisponivel.setBackground(Color.RED);   
              
+              int valor = Integer.parseInt(jTextFieldValorAtual.getText());
         
-        
+        if(valor <= 0) {
+            JOptionPane.showMessageDialog(null, "Por favor, retire seu dinheiro!");          
+            jButton1.setEnabled(false);
+            jButton2.setEnabled(false);
+            jButton3.setEnabled(false);
+            jButton4.setEnabled(false);
+        }
        }
+       
+      
+        
        count50++;
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -568,9 +601,19 @@ public class Principal extends javax.swing.JFrame {
              jButtonSaqueIndisponivel.setForeground(Color.WHITE);
              jButtonSaqueIndisponivel.setBackground(Color.RED);
              
+              int valor = Integer.parseInt(jTextFieldValorAtual.getText());
         
+        if(valor <= 0) {
+            JOptionPane.showMessageDialog(null, "Por favor, retire seu dinheiro!");          
+            jButton1.setEnabled(false);
+            jButton2.setEnabled(false);
+            jButton3.setEnabled(false);
+            jButton4.setEnabled(false);
+        }
         
         }
+        
+       
         count100++;
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -588,6 +631,22 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonpeguedinheiroActionPerformed
 
     private void jButtonSaqueIndisponivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaqueIndisponivelActionPerformed
+      String qntUsuarioRetira1 = jTextFieldQuantidadeUsuarioRetira.getText();
+      int qntUsuarioRetira2 = Integer.parseInt(qntUsuarioRetira1);
+      
+      String valorAtual1 = jTextFieldValorAtual.getText();
+      int valorAtual2 = Integer.parseInt(valorAtual1);
+      
+      int valorAtualPositivo = Math.abs(valorAtual2);
+      
+      int sub = qntUsuarioRetira2-valorAtualPositivo;
+      
+      System.out.println("Valor Usuario retira: "+qntUsuarioRetira2);
+        System.out.println("Valor Atual: "+valorAtualPositivo);
+        System.out.println("Sub: "+sub);
+      
+      jTextFieldQuantidadeUsuarioRetira.setText(""+sub);
+      jTextFieldValorAtual.setText(""+sub);
       
         
         
